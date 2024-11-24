@@ -435,6 +435,18 @@ body {
     padding: 20px; /* Optional padding for extra space */
     box-sizing: border-box; /* Prevents padding from affecting layout */
 }
+/* For iPhones (portrait mode) */
+@media (max-width: 480px) {
+    .icon {
+        display: none; /* Hide all icons on iPhones or small devices */
+    }
+}
+/* For iPhones (portrait and landscape) */
+@media (max-width: 480px), (max-height: 480px) {
+    .icon {
+        display: none; /* Hide all icons on iPhones in both portrait and landscape */
+    }
+}
 
 /* Modal Content */
 .modal-content {
