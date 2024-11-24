@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinned Fish Gallery</title>
+    <style>
+        /* Base Styles for the Page */
+        body {
+            font-family: 'Meow Script', cursive;
+            background-color: #FFFECF;
+            color: #0D3C98;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            min-height: 100vh; /* Ensures content fills the viewport height */
+            border: 20px solid transparent;
+            border-image: url('./images/border.png') 30 round; /* Adjust path as needed */
+        }
+
+        /* Header styles */
+        header {
+            padding: 10px 0; /* Adjust padding to move the content closer together */
+            background-color: transparent;
+            width: 100%;
+            margin-bottom: 10px; /* Small margin below header */
+        }
+
+        header h1 {
+            font-size: 50px;
+            font-style: italic;
+            font-weight: bolder;
+            color: #0D3C98;
+            margin-bottom: 0; /* Remove any space below the title */
+        }
+
+        header p {
+            font-size: 17px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #0D3C98;
+            margin-top: 5px; /* Small margin between title and paragraph */
+        }
+
+        /* Gallery container for the images - Masonry layout */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Auto-fill columns */
+            gap: 20px;
+            padding: 10px;
+            width: 80%;
+            max-width: 1200px;
+            margin-top: 20px;
+            grid-auto-rows: 1fr; /* Let the rows automatically adjust based on content */
+        }
+
+        /* Gallery items */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border: 5px solid transparent; /* Transparent border */
+            border-radius: 8px;
+            transition: transform 0.3s ease; /* Keep transition for scaling */
+            background-color: #ffffff00; 
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto; /* Preserve the image aspect ratio */
+            display: block;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Gallery item hover effect: Only apply scaling to the image */
+        .gallery-item:hover img {
+            transform: scale(1.05); /* Slightly grow the image on hover */
+        }
+
+        /* Gallery item link (covering the whole item) */
+        .gallery-item a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            display: block;
+            text-decoration: none;
+            color: transparent; /* Prevents text from showing */
+        }
+
+        /* Prevent link hover effect (opacity) from affecting the image */
+        .gallery-item a:hover {
+            opacity: 0; /* Hides the link hover effect */
+        }
+
+        /* Footer styles */
+        footer {
+            padding: 10px;
+            text-align: center;
+            background-color: transparent;
+            font-size: 0.8rem;
+            font-style: italic;
+            width: 100%; /* Make sure the footer stretches across the full width */
+        }
+
+        footer p {
+            color: #0D3C98;
+        }
+
+        /* Responsive adjustments for different screen sizes */
+        @media (min-width: 600px) {
+            .gallery-container {
+                grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+            }
+        }
+
+        @media (min-width: 900px) {
+            .gallery-container {
+                grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+            }
+        }
+        .back-link {
+            font-size: 1rem;
+            margin-top: 20px;
+            display: inline-block;
+            color: #0D3C98;
+            text-decoration: none;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tinned Fish Gallery</h1>
+        <p>Tin-credible Fish</p>
+    </header>
+
+    <!-- First Section of Tinned Fish -->
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <a href="../tincredible/cento.html" target="_blank"></a>
+            <img src="../tins/cento.png" alt="Tinned Tuna 1">
+        </div>
+
+        <div class="gallery-item">
+            <a href="../tincredible/fishwifespicyOO.html" target="_blank"></a>
+            <img src="../tins/FWSOO.jpeg" alt="Tinned Tuna 2">
+        </div>
+
+        <div class="gallery-item">
+            <a href="../tincredible/ortiz.html" target="_blank"></a>
+            <img src="../tins/oritz.png" alt="Tinned Tuna 3">
+        </div>
+
+        <div class="gallery-item">
+            <a href="../tincredible/scoutTrout.html" target="_blank"></a>
+            <img src="../tins/Scout.jpeg" alt="Tinned Tuna 4">
+        </div>
+    </div>
+
+    <!-- Second Section of Tinned Fish -->
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <a href="../tincredible/fishwifeLemon.html" target="_blank"></a>
+            <img src="../tins/FWSL.jpeg" alt="Tinned Tuna 5">
+        </div>
+
+        <div class="gallery-item">
+            <a href="../tincredible/TJSS.html" target="_blank"></a>
+            <img src="../tins/TJSalmon.png" alt="Tinned Tuna 6">
+        </div>
+
+        <div class="gallery-item">
+            <a href="../tincredible/seatales.html" target="_blank"></a>
+            <img src="../tins/SeaTales.png" alt="Tinned Tuna 7">
+        </div>
+
+        <div class="gallery-item">
+            <a href="../tincredible/TJNS.html" target="_blank"></a>
+            <img src="../tins/TJNoSaltTuna.png" alt="Tinned Tuna 8">
+        </div>
+    </div>
+
+    <!-- Third Section of Tinned Fish -->
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <a href="../tincredible/TJLS.html" target="_blank"></a>
+            <img src="../tins/TJLSTuna.png" alt="Tinned Tuna 9">
+        </div>
+
+        <div class="gallery-item">
+            <a href="../tincredible/TJAnchov.html" target="_blank"></a>
+            <img src="../tins/TJAnchovOO.png" alt="Tinned Tuna 10">
+        </div>
+
+        <div class="gallery-item">
+            <a href="../tincredible/fishwifeAnchov.html" target="_blank"></a>
+            <img src="../tins/FWAnchov.jpeg" alt="Tinned Tuna 11">
+        </div>
+
+        <div class="gallery-item">
+            <a href="../tincredible/fishwifeATOO.html" target="_blank"></a>
+            <img src="../tins/FWATOO.png" alt="Tinned Tuna 12">
+        </div>
+    </div>
+
+     <!-- Fourth Section of Tinned Fish -->
+  
+
+
+      <!-- Back to Home Link -->
+ <p><a href="../index.html" class="back-link">Back to Home</a></p>
+    <footer>
+        <p>&copy; 2024 Tuna 'Da Day. All rights reserved.</p>
+    </footer>
+</body>
+</html>

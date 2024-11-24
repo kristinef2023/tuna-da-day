@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuna Melt Reviews</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Base Styles for the Page */
+        body {
+            font-family: 'Meow Script', cursive;
+            background-color: #FFFECF;
+            color: #0D3C98;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            min-height: 100vh;  /* Keeps the page taking full height if needed */
+            border: 20px solid transparent;
+            border-image: url('./images/border.png') 30 round;
+        }
+
+        /* Header styles */
+        header {
+            padding: 20px;
+            background-color: transparent;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 50px;
+            font-style: italic;
+            font-weight: bolder;
+            color: #0D3C98;
+            margin-bottom: 0;
+        }
+
+        header p {
+            font-size: 18px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #0D3C98;
+            margin-top: 5px;
+        }
+
+        /* Review Container (like a Diner Menu) */
+        .review-container {
+            background-color: #FFF;
+            border: 5px solid #0D3C98;  /* Blue border around the entire container */
+            border-radius: 8px;
+            width: 80%;
+            max-width: 1000px;
+            margin-top: -20px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;  /* Allow the container to grow as reviews are added */
+        }
+
+        /* Review Section */
+        .review-section {
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Review Image */
+        .review-container img {
+            width: 50% !important;   /* Use !important to override inline styles */
+            height: auto !important;  /* Keep the aspect ratio intact */
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Review Content */
+        .review-content h2 {
+            font-size: 32px;
+            color: #0D3C98;
+            margin-bottom: 10px;
+            margin-top: -3px;
+            text-decoration: underline;
+        }
+
+        /* Fish Rating System */
+        .fish-rating {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin: 15px 0;
+        }
+
+        .fish-rating i {
+            font-size: 20px;  /* Adjust the size of the fish icons */
+            color: #0D3C98;  /* Default fish color */
+        }
+
+        /* Placeholder Section styles */
+        .review-section h3 {
+            font-size: 24px;
+            color: #0D3C98;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .review-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #333;
+        }
+/* Tomato Icon styles */
+.header-icon {
+    padding: 5px; /* Space around the icon */
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    cursor: pointer; /* Show pointer cursor to indicate clickability */
+    animation: dance 1.5s infinite ease-in-out; /* Add animation */
+}
+
+/* Hover effect for the tomato icon */
+.header-icon {
+    padding: 5px; /* Space around the icon */
+    animation: dance-tomato 2s infinite ease-in-out; /* Tomato's dancing animation */
+    cursor: pointer; /* Show pointer cursor to indicate clickability */
+}
+
+/* Hover effect */
+.header-icon:hover {
+    animation: hover-tomato 0.5s ease-in-out; /* Bounce effect on hover */
+    transform-origin: center; /* Ensure rotation happens at the center */
+}
+
+/* Keyframes for the dancing animation */
+@keyframes dance-tomato {
+    0%, 100% {
+        transform: translateY(0) rotate(0); /* Default position */
+    }
+    20% {
+        transform: translate(-5px, -5px) rotate(-5deg); /* Slight left tilt, up and left */
+    }
+    40% {
+        transform: translate(5px, -5px) rotate(5deg); /* Tilt up and to the right */
+    }
+    60% {
+        transform: translate(-5px, 5px) rotate(-5deg); /* Down and to the left */
+    }
+    80% {
+        transform: translate(5px, 5px) rotate(5deg); /* Down and to the right */
+    }}
+
+/* Keyframes for hover bounce effect */
+@keyframes hover-tomato {
+    0% {
+        transform: scale(1.1) rotate(10deg); /* Slight enlargement and rotation */
+    }
+    50% {
+        transform: scale(1.3) rotate(15deg); /* Bigger pop and more rotation */
+    }
+    100% {
+        transform: scale(1.1) rotate(10deg); /* Return to enlarged hover state */
+    }
+}
+
+
+.back-link {
+    font-size: 1rem;
+    margin-top: 20px;
+    display: inline-block;
+    color: #0D3C98;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tuna Melt Reviews</h1>
+        <!-- Link the image to testing.html -->
+        <a href="../theperfectmelt.html">
+            <img src="file:///Users/kristinefeng/Desktop/TDD2/images/redTom.png" alt="Tuna Melt Icon" class="header-icon">
+        </a>
+        <p>The Perfect Melt is Behind the Tomato!</p>
+    </header>
+    
+
+    <!-- Review Container (like a Diner Menu) -->
+    <div class="review-container">
+        <!-- Review Content -->
+        <div class="review-content">
+            <h2>The Classic Tuna Melts</h2>
+            <!-- 3DD Review -->
+            <div class="review-section">
+                <h3>Three Decker Diner: $13.75</h3>
+                <img src="../melts/ThreeDecker.jpeg" alt="Three Decker Diner Tuna Melt" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 0px;">
+                <div class="fish-rating">
+                    <i class="fas fa-fish"></i>
+                    <i class="fas fa-fish"></i>
+                    <i class="fas fa-fish"></i>
+                    <i class="fas fa-fish"></i>
+                    <i class="fas fa-fish"></i>
+                </div>
+                <p>Served with your choice of potato salad or shoestrings, this is the best bang for your buck tuna melt in the city!</p>
+            </div>
+            <br>
+            <!-- B&H Review  -->
+            <div class="review-section">
+                <h3>B&H Dairy: $12</h3>
+                <img src="../melts/B&H.jpeg" alt="B&H Tuna Melt" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 0px;">
+                <div class="fish-rating">
+                    <i class="fas fa-fish"></i>
+                    <i class="fas fa-fish"></i>
+                    <i class="fas fa-fish"></i>
+                    <i class="fas fa-fish"></i>
+                </div>
+                <p>Challah! Toasted and griddled, have it with a pickle or make it a combo and get a soup!</p>
+            </div>
+            <br>
+                        <!-- S&P Lunch  -->
+                        <div class="review-section" id="sp-review">
+                            <h3>S&P Lunch: $17</h3>
+                            <img src="../melts/S&P.jpeg" alt="S&P Tuna Melt" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 0px;">
+                            <div class="fish-rating">
+                                <i class="fas fa-fish"></i>
+                                <i class="fas fa-fish"></i>
+                                <i class="fas fa-fish"></i>
+                                <i class="fas fa-fish"></i>
+                                <i class="fas fa-fish"></i>
+                            </div>
+                            <p>Slight price jump.. however you are instantly transported into the heart of New York City when you enter. The griddled rye is certainly what you pay and return for!</p>
+                        </div>            
+                        <br>
+            <!-- The Flame Diner Review 4 -->
+            <div class="review-section">
+                <h3>The Flame Diner: $19</h3>
+                <img src="../melts/flamediner.jpeg" alt="The Flame Diner Tuna Melt" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 0px;">
+                <div class="fish-rating">
+                    <i class="fas fa-fish"></i>
+                </div>
+                <p>Open face, but we recommend you stack 'em! Bit pricey for the amount of fries and quality, but at this diner, you can get tuna 24/7!</p>
+            </div>
+            <br>
+            <!-- The Commodore Review 5 -->
+            <div class="review-section">
+                <h3>The Commodore: $14</h3>
+                <img src="../melts/Commodore.jpeg" alt="The Commodore Tuna Melt" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 0px;">
+                <div class="fish-rating">
+                    <i class="fas fa-fish"></i>
+                    <i class="fas fa-fish"></i>
+                    <i class="fas fa-fish"></i>
+                    <i class="fas fa-fish"></i>
+                    <i class="fas fa-fish"></i>
+                </div>
+                <p>Don't dally on this dilly melt.. melted with gruyere on rye this is our current favorite melt!</p>
+            </div>
+            <br>
+            <!-- Edith's Sandwich Counter for Review 6 -->
+            <div class="review-section">
+                <h3>Edith's Sandwich Counter: $15</h3>
+                <img src="../melts/edith2.jpeg" alt="Place 6 Tuna Melt" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 0px;">
+                <div class="fish-rating">
+                    <i class="fas fa-fish"></i>
+                    <i class="fas fa-fish"></i>
+                    <i class="fas fa-fish"></i>
+                    <i class="fas fa-fish"></i>
+                    <i class="fas fa-fish"></i>
+                </div>
+                <p>Nothin' but smiles here! This locally owned melt doesn't just have American and Emmenthal, they also have us cheesin' ear to ear!</p>
+            </div>
+            <br>
+            <!-- Golden Diner for Review 6 -->
+            <div class="review-section">
+                <h3>Golden Diner: $16</h3>
+                <img src="../images/place4.jpg" alt="Place 4 Tuna Melt" style="width: 100%; height: auto; border-radius: 8px; margin-bottom: 0px;">
+                <div class="fish-rating">
+                    <i class="fas fa-fish"></i>
+                    <i class="fas fa-fish"></i>
+                    <i class="fas fa-fish"></i>
+                    <i class="fas fa-fish"></i>
+                </div>
+                <p>[Insert review content for Place 4 here]</p>
+            </div>
+            <br>
+        </div>
+    </div>
+ <!-- Back to Home Link -->
+ <p><a href="../index.html" class="back-link">Back to Home</a></p>
+    <footer>
+        <p>&copy; 2024 Tuna 'Da Day. All rights reserved.</p>
+    </footer>
+</body>
+</html>
