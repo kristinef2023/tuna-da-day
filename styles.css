@@ -1,0 +1,494 @@
+/* Apply box-sizing globally */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Ensures padding and borders are included in width/height */
+}
+
+/* Base Styles */
+body {
+    font-family: 'Meow Script', cursive; 
+    background-color: #FFFECF;
+    color: #0D3C98;
+    margin-top: 10px;
+    padding: 10px; /* Adds space around the content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    min-height: 100vh; /* Ensures content fills the viewport height */
+
+    /* Border Image */
+    border: 20px solid transparent; /* Set a transparent border to create space */
+    border-image: url('./images/border.png') 30 round; /* Adjust the path to the correct location */
+    
+    /* Center the content */
+    margin: 0 auto; /* Center the body content */
+}
+
+/* Header and Menu Section */
+header {
+    padding: 10px; /* Reduce padding to bring content closer */
+    color: #0D3C98;
+    width: 100%;
+    background-color: transparent;
+    text-align: center; /* Ensures both title and subtitle are centered */
+}
+
+header h1 {
+    font-size: clamp(3rem, 10vw, 6rem);  /* Font size adjusts based on viewport width */
+    margin: 10px; /* Remove any default margin around h1 */
+    margin-top: 25px;
+    margin-bottom: -5px;
+    line-height: 1.1; /* Adjust line-height to bring title and subtitle closer */
+    font-family: 'Meow Script', cursive; 
+    font-style: italic;
+    font-weight:470;
+}
+
+header p {
+    margin: 0px 0 0; /* Reduces space between title and subtitle */
+    font-size: 19px; /* Adjust subtitle size */
+    line-height: 1.3; /* Adjust line-height for subtitle */
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: lighter;
+    color:black;
+}
+
+/* Menu Section Styles */
+.menu-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the menu items horizontally */
+    margin-top: 20px; /* Add some spacing from the header */
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the menu items themselves */
+    margin-top: 12px;
+    margin-bottom: 35px;
+    width: 80%; /* Optional: limits the width of the menu items */
+    max-width: 800px; /* Optional: limits the max width of the menu items */
+    text-align: center; /* Center all the content in the menu item */
+}
+
+/* Centering the h2 heading */
+.menu-item h2 {
+    font-size: 30px;
+    font-style: italic ;
+    font-weight: lighter;
+    margin: 15px 0;
+    text-align: center; /* Ensure the h2 is centered */
+}
+
+/* Styling for the h3 tags within the menu item content */
+.menu-item-content h3 {
+    font-size: 17px;
+    font-weight:500;
+    margin-top: -10px;
+    color: #000000; /* New color for the h3 tag */
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+/* Make the menu item content container transparent and remove border */
+.menu-item-content {
+    padding: 0px;
+    margin-top: -5px; /* Adds some space between the header and the content */
+    width: 100%; /* Ensure it spans the full width of its parent */
+    background-color: transparent; /* Make background transparent */
+    border: none; /* Remove the border */
+}
+
+/* Menu Item <p> Styling - Updated to black */
+.menu-item-content p {
+    font-size: 13.5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    color: #000000; /* Change p tag text color to black */
+    margin: 10px 0; /* Adds some spacing between the paragraphs */
+    margin-top: -8px;
+}
+
+/* Links: Remove underlines */
+a {
+    text-decoration: none;
+    color: #0D3C98;
+}
+
+a:visited, a:focus, a:hover, a:active {
+    text-decoration: none;
+    color: #0D3C98;
+}
+
+/* Hover state */
+a:hover {
+    color: #041539;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    padding: 10px;
+    font-size: 0.9rem;
+    background-color: transparent;
+    color: #041539;
+    width: 100%;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    margin-top: auto;  /* Ensures the footer is pushed down */
+}
+
+/* Main content container */
+main {
+    flex: 1 0 auto; /* This ensures that the main content area takes up the remaining space */
+    padding-bottom: 50px; /* Adds some padding to ensure the footer does not overlap the content */
+}
+
+/* For the body: use flexbox to structure the content */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+    margin: 0;
+    padding: 10px;
+}
+
+/* Media Queries */
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+    body {
+        padding: 5px;
+        border: 15px solid transparent;
+    }
+    
+    /* Header */
+    header h1 {
+        font-size: 2rem;
+        margin: 0 auto;
+        text-align: center;
+    }
+    header p {
+        font-size: 0.9rem;
+    }
+
+    /* Menu Section */
+    .menu-section {
+        display: block;
+        margin-top: 20px;
+    }
+
+    .menu-item {
+        margin-bottom: 20px;
+    }
+
+    .menu-item h2 {
+        font-size: 1.5rem;
+    }
+
+    .menu-item h3 {
+        font-size: 1.3rem;
+    }
+
+    .menu-item h4 {
+        font-size: 1rem;
+    }
+
+    .menu-item p {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+/* For screens between 501px and 768px */
+@media (max-width: 768px) and (min-width: 501px) {
+    body {
+        padding: 8px;
+        border: 12px solid transparent;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+        margin: 0 auto;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    /* Menu Section */
+    .menu-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .menu-item {
+        width: 85%;
+        margin-bottom: 25px;
+    }
+
+    .menu-item h2 {
+        font-size: 1.8rem;
+    }
+
+    .menu-item h3 {
+        font-size: 1.4rem;
+    }
+
+    .menu-item p {
+        font-size: 1rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+
+    /* Main Content Adjustment */
+    main {
+        margin-left: 30px;
+    }
+}
+
+/* For screens smaller than 500px */
+@media (max-width: 500px) {
+    body {
+        padding: 5px;
+        border: 10px solid transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+        margin: 0 auto;
+    }
+
+    header p {
+        font-size: 0.85rem;
+    }
+
+    /* Menu Section */
+    .menu-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .menu-item {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .menu-item h2 {
+        font-size: 1.3rem;
+    }
+
+    .menu-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .menu-item p {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
+    footer {
+        font-size: 0.7rem;
+        padding: 8px;
+    }
+
+    /* Main Content Shift */
+    main {
+        margin-left: 20px;
+    }
+}
+
+/* Container for all the icons */
+.icon-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows clicks to pass through to underlying elements */
+}
+
+/* General icon styling (keep it common for all icons) */
+.icon {
+    position: absolute;
+    pointer-events: auto; /* Allow interaction with icons if needed */
+    transition: transform 0.3s ease; /* Smooth hover transition */
+}
+
+
+/* Optional styling for icons when hovered */
+.icon:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon */
+}
+
+/* Media Queries for different screen sizes */
+
+
+/* For medium screens (tablets) done */
+@media (min-width: 481px) and (max-width: 768px) {
+    .icon1 { top: 1vh; left: 6vw; width: 15vw; height: 15vw; }
+    .icon2 { top: 12vh; left: 18vw; width: 4vw; height: 4vw; }
+    .icon3 { top: 2vh; left: 70vw; width: 15vw; height: 8vw; }
+    .icon4 { top: 48vh; left: 71vw; width: 13vw; height: 5.5vw; }
+    .icon5 { top: 80vh; left: 80vw; width: 5vw; height: 7vw; }
+    .icon6 { top: 15vh; left: 15vw; width: 12vw; height: 12vw; }
+    .icon7 { top: 45vh; left: 29vw; width: 7vw; height: 10vw; }
+    .icon8 { top: 14.5vh; left: 66vw; width: 7vw; height: 10vw; }
+    .icon9 { top: 8vh; left: 72vw; width: 4vw; height: 4vw; }
+    .icon10 { top: 98vh; left: 6vw; width: 14vw; height: 6vw; }
+    .icon11 { top: 97vh; left: 77vw; width: 14vw; height: 8vw; }
+    .icon12 { top: 46vh; left: 27.5vw; width: 4vw; height: 4vw; }
+    .icon13 { top: 14vh; left: 10vw; width: 12vw; height: 12vw;}
+    .icon14 { top: 17vh; left: 66vw; width: 2.5vw; height: 2.5vw; }
+}
+
+/* For large screens (desktops) done*/ 
+@media (min-width: 769px) {
+    .icon1 { top: 5vh; left: 3vw; width: 15vw; height: 15vw; }
+    .icon2 { top: 22vh; left: 14vw; width: 4vw; height: 4vw; }
+    .icon3 { top: 5vh; left: 80vw; width: 13vw; height: 6vw; }
+    .icon4 { top: 55vh; left: 70vw; width: 13vw; height: 6vw; }
+    .icon5 { top: 80vh; left: 80vw; width: 5vw; height: 7vw; }
+    .icon6 { top: 27vh; left: 17vw; width: 10vw; height: 10vw; }
+    .icon7 { top: 50vh; left: 29vw; width: 7vw; height: 10vw; }
+    .icon8 { top: 26vh; left: 62vw; width: 7vw; height: 10vw; }
+    .icon9 { top: 20vh; left: 78vw; width: 4vw; height: 4vw; }
+    .icon10 { top: 98vh; left: 6vw; width: 14vw; height: 6vw; }
+    .icon11 { top: 97vh; left: 77vw; width: 14vw; height: 8vw; }
+    .icon12 { top: 52vh; left: 27.5vw; width: 4vw; height: 4vw; }
+    .icon13 { top: 25vh; left: 13vw; width: 10vw; height: 10vw;}
+    .icon14 { top: 30vh; left: 62vw; width: 2.5vw; height: 2.5vw; }
+
+}
+
+/* For extra large screens (1200px and up) done*/
+@media (min-width: 1200px) {
+    .icon1 { top: 0.7vh; left: 2vw; width: 16vw; height: 16vw; }
+    .icon2 { top: 22vh; left: 14vw; width: 4vw; height: 4vw; }
+    .icon3 { top: 5vh; left: 80vw; width: 13vw; height: 6vw; }
+    .icon4 { top: 55vh; left: 70vw; width: 13vw; height: 6vw; }
+    .icon5 { top: 78vh; left: 55vw; width: 4vw; height: 4.4vw; }
+    .icon6 { top: 28vh; left: 15vw; width: 9vw; height: 9vw; }
+    .icon7 { top: 50vh; left: 34vw; width: 7vw; height: 10vw; }
+    .icon8 { top: 26vh; left: 58vw; width: 6vw; height: 8vw; }
+    .icon9 { top: 20vh; left: 78vw; width: 4vw; height: 4vw; }
+    .icon10 { top: 98vh; left: 6vw; width: 14vw; height: 6vw; }
+    .icon11 { top: 97vh; left: 77vw; width: 14vw; height: 8vw; }
+    .icon12 { top: 52vh; left: 33vw; width: 4vw; height: 4vw; }
+    .icon13 { top: 27vh; left: 10.5vw; width: 9vw; height: 9vw;}
+    .icon14 { top: 30vh; left: 58vw; width: 2vw; height: 2vw; }
+}
+
+/* For 13-inch MacBook Air in full screen (2560px wide, 1600px high) */
+@media (min-width: 1280px) and (max-width: 2560px) and (min-height: 800px) {
+    .icon1 { top: 0.5vh; left: 8vw; width: 12vw; height: 12vw; }
+    .icon2 { top: 18vh; left: 20vw; width: 4vw; height: 4vw; }
+    .icon3 { top: 5vh; left: 75vw; width: 12vw; height: 5vw; }
+    .icon4 { top: 45vh; left: 63vw; width: 12vw; height: 4.5vw; }
+    .icon5 { top: 64.3vh; left: 56vw; width: 3vw; height: 4vw; }
+    .icon6 { top: 25vh; left: 12vw; width: 8vw; height: 8vw; }
+    .icon7 { top: 42vh; left: 34vw; width: 6vw; height: 9vw; }
+    .icon8 { top: 21vh; left: 55.5vw; width: 6vw; height: 8vw; }
+    .icon9 { top: 15vh; left: 73vw; width: 4vw; height: 4vw; }
+    .icon10 { top: 90vh; left: 5vw; width: 14vw; height: 6vw; }
+    .icon11 { top: 85vh; left: 70vw; width: 14vw; height: 8vw; }
+    .icon12 { top: 44vh; left: 34vw; width: 2.5vw; height: 2.5vw; }
+    .icon13 { top: 25vh; left: 8vw; width: 7vw; height: 7vw; }
+    .icon14 { top: 25.2vh; left: 56vw; width: 2vw; height: 2vw; }
+}
+/* Modal background (covers the entire page) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; /* Full height of the screen */
+    background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+    display: flex; /* Use flexbox to center the modal */
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    padding: 20px; /* Optional padding for extra space */
+    box-sizing: border-box; /* Prevents padding from affecting layout */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #FFFECF;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style for the form fields */
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #0056b3; /* Blue color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+input[type="submit"]:hover {
+    background-color: #041539; /* Darker blue on hover */
+}

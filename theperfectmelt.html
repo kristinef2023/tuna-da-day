@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Perfect Melt - Tuna Melt Reviews</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Page Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFECF;
+            color: #0D3C98;
+            text-align: center;
+        }
+
+        header {
+            background-color: #FFF;
+            padding: 20px 10px;
+            border-bottom: 5px solid #0D3C98;
+        }
+
+        header h1 {
+            font-size: 40px;
+            font-style: italic;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-top: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 10px;
+            background-color: #FFF;
+            margin: 20px 0;
+            border: 5px solid #0D3C98;
+            border-radius: 8px;
+        }
+
+        .hero-img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text {
+            max-width: 600px;
+            margin: 0 20px;
+        }
+
+        .hero-text h2 {
+            font-size: 28px;
+            text-decoration: underline;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Criteria Section */
+        .criteria {
+            background-color: #FFF;
+            padding: 20px;
+            border: 5px solid #0D3C98;
+            border-radius: 8px;
+            margin: 20px 10px;
+        }
+
+        .criteria h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .criteria-item {
+            padding: 20px;
+            background-color: #FFFECF;
+            border: 2px solid #0D3C98;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .criteria-item i {
+            font-size: 30px;
+            color: #0D3C98;
+            margin-bottom: 10px;
+        }
+
+        .criteria-item h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .criteria-item p {
+            font-size: 16px;
+        }
+
+        /* Ranking Section */
+.ranking {
+    background-color: #FFF;
+    padding: 20px;
+    border: 5px solid #0D3C98;
+    border-radius: 8px;
+    margin: 20px 10px;
+}
+
+.ranking h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.ranking p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.ranking-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: start;
+    background-color: #FFFECF;
+}
+
+.ranking-item {
+    padding: 15px;
+    text-align: center;
+    max-width: 250px;
+}
+
+.ranking-item i {
+    font-size: 24px;
+    color: #0D3C98;
+    margin: 10px 5px;
+}
+
+.ranking-item p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+        /* Highlight Section */
+        .highlight {
+            padding: 20px;
+            background-color: #FFF;
+            border: 5px solid #0D3C98;
+            border-radius: 8px;
+            margin: 20px 10px;
+        }
+
+        .highlight h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .highlight-img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 0px;
+        }
+
+        .highlight p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+/* Recipe Icon Section */
+.recipe-icon {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;  /* Add padding to make the box slightly bigger */
+    background-color: #0D3C98;  /* Ensure consistency with the rest of the content */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slightly larger shadow for balance */
+    display: inline-block;
+    width: auto;
+    max-width: 300px;  /* Limiting the max-width to maintain balance */
+    animation: dance-recipe 1.5s infinite ease-in-out; /* Add dancing animation */
+}
+
+/* Keyframes for the dancing animation with tilt up and to the right */
+@keyframes dance-recipe {
+    0%, 100% {
+        transform: translateY(0) rotate(0); /* Default position */
+    }
+    20% {
+        transform: translate(-5px, -5px) rotate(-5deg); /* Slight left tilt, up and left */
+    }
+    40% {
+        transform: translate(5px, -5px) rotate(5deg); /* Tilt up and to the right */
+    }
+    60% {
+        transform: translate(-5px, 5px) rotate(-5deg); /* Down and to the left */
+    }
+    80% {
+        transform: translate(5px, 5px) rotate(5deg); /* Down and to the right */
+    }
+}
+
+/* Link Styles */
+.recipe-icon a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    padding: 20px;  /* Increase padding to make the content inside the box larger */
+    background-color: #f9f9f9;  /* Maintain the soft color */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect for Recipe Icon */
+.recipe-icon a:hover {
+    background-color: #f2f2f2;
+    transform: scale(1.05);
+    animation: none; /* Stop animation when hovered */
+}
+
+/* Image inside Recipe Icon */
+.recipe-icon-img {
+    width: 60px;  /* Adjusting the size of the icon for better alignment */
+    height: auto;
+    margin-bottom: 15px; /* Increase space between icon and text */
+}
+
+/* Text inside Recipe Icon */
+.recipe-icon p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 5px;
+    color: #333;
+}
+.back-link {
+    font-size: 1rem;
+    margin-top: 20px;
+    display: inline-block;
+    color: #0D3C98;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+        /* Footer */
+        footer {
+            padding: 10px 0;
+            background-color: #FFFECF;
+            border-top: 5px solid #0D3C98;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <br>
+        <h1>The Perfect Melt</h1>
+        <br>
+        <p>The secret behind the perfect melt is that there is no tomato — but ketchup is a must!</p>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-text">
+                <h2>What Makes the Perfect Melt?</h2>
+                <p><strong>It’s more than just bread, cheese, and tuna.</strong></p>
+                <img src="./melts/homeade.jpeg" alt="Tuna Melt Hero" class="hero-img">
+                <br>Our ideal tuna melt is crispy bread, cold tuna, and semi-melted cheese...Discover how texture, flavor balance, and unique twists create the ultimate tuna melt experience.</p>
+            </div>
+        </section>
+
+        <!-- Criteria Section -->
+        <section class="criteria">
+            <h2>Our Rating Criteria</h2>
+            <div class="criteria-grid">
+                <div class="criteria-item">
+                    <i class="fas fa-fish"></i>
+                    <h3>Tuna Quality</h3>
+                    <p>Fresh, flaky, and perfectly seasoned tuna is a must.</p>
+                </div>
+                <div class="criteria-item">
+                    <i class="fas fa-bread-slice"></i>
+                    <h3>Bread Choice</h3>
+                    <p>Griddled rye, challah, or sourdough that’s toasted to perfection.</p>
+                </div>
+                <div class="criteria-item">
+                    <i class="fas fa-cheese"></i>
+                    <h3>Cheese Melt</h3>
+                    <p>From sharp cheddar, gooey gruyere, to classic american.</p>
+                </div>
+                <div class="criteria-item">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Extras</h3>
+                    <p>Pickles, sides, and creative additions for an unforgettable bite.</p>
+                </div>
+            </div>
+        </section>
+
+<section class="ranking">
+    <h2>Our Fish Rating System</h2>
+    <p>We rate each dish based on several key factors, giving it a score between 1 and 5 fish. Here's what each rating means:</p>
+    <div class="ranking-grid">
+        <div class="ranking-item">
+            <i class="fas fa-fish"></i>
+            <p>Presented fish and cheese on bread. You did it!</p>
+        </div>
+        <div class="ranking-item">
+            <i class="fas fa-fish"></i>
+            <i class="fas fa-fish"></i>
+            <p>Fresh or fishy? If it's tasty it gets two!</p>
+        </div>
+        <div class="ranking-item">
+            <i class="fas fa-fish"></i>
+            <i class="fas fa-fish"></i>
+            <i class="fas fa-fish"></i>
+            <p>Balance? If the ratio is harmonious, you get three fish!</p>
+        </div>
+        <div class="ranking-item">
+            <i class="fas fa-fish"></i>
+            <i class="fas fa-fish"></i>
+            <i class="fas fa-fish"></i>
+            <i class="fas fa-fish"></i>
+            <p>Worth Every Penny. This is a tuna melt that is worth the price or is a steal!</p>
+        </div>
+        <div class="ranking-item">
+            <i class="fas fa-fish"></i>
+            <i class="fas fa-fish"></i>
+            <i class="fas fa-fish"></i>
+            <i class="fas fa-fish"></i>
+            <i class="fas fa-fish"></i>
+            <p>The Ultimate Experience. From flawless sides to impeccable service, and a memorable atmosphere that brings the dish to a whole new level.</p>
+        </div>
+    </div>
+</section>
+
+
+        <!-- Highlight Section -->
+        <section class="highlight">
+            <h2>Current Perfect Catch</h2>
+            <img src="./melts/S&P.jpeg" alt="Perfect Tuna Melt" class="highlight-img">
+            <p>Our current top-rated tuna melt is from <strong>S&P Lunch</strong>. 
+                <br>Its griddled rye bread and perfectly melted cheese make it a standout dish worth savoring. A true New York favorite!</p>
+        </section>
+
+         <!-- Recipe Icon Section -->
+         <section class="recipe-icon">
+            <a href="recipes.html">
+                <i class="fas fa-book recipe-icon-img"></i>
+                <p>Explore Recipes</p>
+            </a>
+        </section>        
+    </main>
+    <!-- Back to Home Link -->
+ <p><a href="./index.html" class="back-link">Back to Home</a></p>
+    <footer>
+        &copy; 2024 The Perfect Catch. All Rights Reserved.
+    </footer>
+</body>
+</html>

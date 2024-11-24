@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Tuna 'Da Day</title>
+      <link rel="stylesheet" href="styles.css">
+   
+      <!-- Link to the Kapakana font (as a cursive font) -->
+      <link href="https://fonts.googleapis.com/css2?family=Meow+Script&display=swap" rel="stylesheet">
+
+      <!-- Add Favicon Link -->
+   <link rel="icon" href="./Fish_Project-Tuna-01_icon-icons.com_65918.png" type="image/x-icon">
+   </head>
+
+   <body>
+      <header>
+         <h1>Tuna 'Da Day</h1>
+         <p>Fishin' the best for you</p>
+      </header>
+
+      <main>
+         <!-- Tuna Menu Section -->
+         <section class="menu-section">
+
+           <!-- Tuna Melt Reviews -->
+<div class="menu-item" id="tuna-melt">
+   <h2><a href="./home/tunamelt.html" target="_blank">Tuna Melt Reviews</a></h2>
+   <div class="menu-item-content">
+      <h3>Our House Special</h3>
+      <p>A deep dive into the world of tuna melts, from the classics to daring new takes. Expect layers of melty goodness, crispy bread, and flavorful tuna fillings—all rated for taste, texture, and creativity. Perfect for those craving comfort food with a twist.</p>
+   </div>
+</div>
+
+<!-- Canned Fish Reviews -->
+<div class="menu-item" id="canned-fish">
+   <h2><a href="./home/cannedfish.html" target="_blank">Canned Fish Reviews</a></h2>
+   <div class="menu-item-content">
+      <h3>Canned, But Never Bland</h3>
+      <p>An exploration of canned fish varieties from across the globe. Each review covers taste, texture, and the best ways to enjoy these pantry essentials. Think of this as your guide to uncovering hidden gems in the canned aisle.</p>
+   </div>
+</div>
+
+<!-- Catch of the Day -->
+<div class="menu-item" id="catch-of-the-day">
+   <h2><a href="./home/catchoftheday.html" target="_blank">Catch of the Day</a></h2>
+   <div class="menu-item-content">
+      <h3>Something New, Every Day</h3>
+      <p>Reelin' in the best of the best! From artisanal tuna creations to quirky recipes and one-of-a-kind tuna events, this is where the freshest finds swim into view. Keep your catch of the day fresh, exciting, and always full of surprises!</p>
+   </div>
+</div>
+
+
+<!-- Scattered Icons Container -->
+<div class="icon-container">
+    <img src="./images/tomato 1.png" alt="tomato icon" class="icon icon1">
+    <img src="./images/star 1.png" alt="Icon 2" class="icon icon2">
+    <img src="./images/tuna1 1.png" alt="tuna icon" class="icon icon3">
+    <img src="./images/tuna3 1.png" alt="Icon 4" class="icon icon4">
+    <img src="./images/martini 1.png" alt="martini icon" class="icon icon5">
+    <img src="./images/lemon 1.png" alt="lemon icon" class="icon icon6">
+    <img src="./images/herb 1.png" alt="herb 1 icon" class="icon icon7">
+    <img src="./images/herb 2.png" alt="Icon 8" class="icon icon8">
+    <img src="./images/star 1.png" alt="star icon" class="icon icon9">
+    <img src="./images/tuna4 1.png" alt="Icon 10" class="icon icon10">
+    <img src="./images/tuna2 1.png" alt="Icon 11" class="icon icon11">
+    <img src="./images/star 1.png" alt="star icon" class="icon icon12">
+    <img src="./images/lemonwedge 1.png" alt="lemon wedge icon" class="icon icon13">
+    <img src="./images/heart 1.png" alt="heart icon" class="icon icon14">
+
+ </div>
+
+      </main>
+
+<!-- Footer with "Catch Us Here" link -->
+<footer>
+   <p><a href="javascript:void(0);" onclick="toggleContactForm()">Catch Us Here</a></p>
+</footer>
+
+<!-- Modal for the Contact Form -->
+<div id="contact-modal" class="modal">
+   <div class="modal-content">
+       <!-- Close button (X) -->
+       <span class="close" onclick="toggleContactForm()">&times;</span>
+       <h2>Reel us in with a Catch!</h2>
+       <form id="contact-form" onsubmit="handleSubmit(event)">
+           <label for="name">Name:</label>
+           <input type="text" id="name" name="name" required><br><br>
+
+           <label for="email">Email:</label>
+           <input type="email" id="email" name="email" required><br><br>
+
+           <label for="subject">Subject:</label>
+           <input type="text" id="subject" name="subject" required><br><br>
+
+           <label for="message">Message:</label><br>
+           <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+           <input type="submit" value="Send Message">
+       </form>
+   </div>
+</div>
+
+<script src="script.js"></script>
+   </body>
+</html>
